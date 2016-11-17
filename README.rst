@@ -1,34 +1,5 @@
-=======
-PyAlpha
-=======
+# Kriging
 
-|Build_Status| |Coverage|
+[![Build Status](https://travis-ci.org/mpcsdspa/krigging.svg?branch=master)](https://travis-ci.org/mpcsdspa/krigging) [![Coverage Status](https://coveralls.io/repos/github/mpcsdspa/krigging/badge.svg?branch=master)](https://coveralls.io/github/mpcsdspa/krigging?branch=master)
 
-PyAlpha is a python toolbox for backtesting trading ideas. An Alpha is a 
-concrete trading idea that can be simulated historically.
-
-
-In PyAlpha, an 'Alpha' refers to a mathematical model or strategy, written as 
-python code, which places different bets (weights) on different stocks, and is
-expected to be profitable in the long run.
-
-Dependencies
-------------
-
-- peewee
-- pandas
-- ystockquote
-
-Installation
-------------
-
-.. sourcecode:: bash
-
-    $ git clone https://github.com/raj-krishnan/PyAlpha.git
-    $ cd PyAlpha
-
-.. |Build_Status| image:: https://travis-ci.org/raj-krishnan/PyAlpha.svg?branch=master
-   :target: https://travis-ci.org/raj-krishnan/PyAlpha
-
-.. |Coverage| image:: https://coveralls.io/repos/github/raj-krishnan/PyAlpha/badge.svg?branch=master
-   :target: https://coveralls.io/github/raj-krishnan/PyAlpha?branch=master
+SDES PROJECT - KRIGGING
