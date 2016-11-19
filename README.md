@@ -1,5 +1,5 @@
 # Kriging
-[![Build Status](https://travis-ci.org/mpcsdspa/sdesproject2.svg?branch=master)](https://travis-ci.org/mpcsdspa/sdesproject2) [![Coverage Status](https://coveralls.io/repos/github/mpcsdspa/learn/badge.svg?branch=master)](https://coveralls.io/github/mpcsdspa/learn?branch=master) [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/mpcsdspa/sdesproject2.svg?branch=master)](https://travis-ci.org/mpcsdspa/sdesproject2) [![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=svg)](https://circleci.com/gh/sankasuraj/sdesproject2) [![Coverage Status](https://coveralls.io/repos/github/mpcsdspa/learn/badge.svg?branch=master)](https://coveralls.io/github/mpcsdspa/learn?branch=master) [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
 
 Kriging is an invaluable tool in understanding the behavior of sparse data. It has proven effective in many aspects of engineering and in applications where data is "expensive", or difficult, to collect.
 
