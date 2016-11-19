@@ -1,17 +1,16 @@
+
 language: python
 
 python:
   - 3.5
 
 install:
+  - pip install -r requirements.txt
   - pip install coverage
   - pip install python-coveralls
-  - pip install codecov
 
 script:
-  - python test.py
+  - nosetests --with-coverage -v
 
 after_success:
   - coveralls
-  - codecov
-  - bash <(curl -s https://codecov.io/bash)
