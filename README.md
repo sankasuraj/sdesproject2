@@ -23,11 +23,7 @@ If you wish to see a working build/test script please see our codevoc.yml.
 
 ## Documentation
 
-The latest documentation for PyKriging is available at http://asdjfhj.readthedocs.io/en/latest
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mpcsdspa/learn/tags). 
+The latest documentation for PyKriging is available at http://asdjfhj.readthedocs.io/en/latest 
 
 ## Authors
 
