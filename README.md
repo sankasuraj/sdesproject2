@@ -18,19 +18,18 @@ The core dependencies are:
 ### Installation
 Please fill this suraj, we need to include makefile setup.py from which installation should happen.
 
-## Tests
+### Credits
 
-If you wish to see a working build/test script please see our codevoc.yml.
+Kriging has been developed as a part of AE 663 (Software Development Techniques in Engineering and Science) project at IIT Bombay
+
+Lead Developers:
+ - Sanka Suraj
+ - Vinodkumar Metla
+ - Mrinalgouda Patil
 
 ## Documentation
 
 The latest documentation for PyKriging is available at http://kriging.readthedocs.io/
-
-## Authors
-
-* **Suraj Sanka** 
-* **Vinod Kumar Metla**
-* **Mrinalgouda Patil**
 
 See also the list of [contributors](https://github.com/sankasuraj/sdesproject2/contributors) who participated in this project.
 
