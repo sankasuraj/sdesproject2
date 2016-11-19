@@ -59,17 +59,18 @@ class TestKriging(unittest.TestCase):
 			given = model.x[:,i] * (model.max_x[i] - model.min_x[i]) + model.min_x[i]
 			self.compare_arrays(given, x[:,i])
 
-	# @mock.patch('builtins.open', mock_open)
-	# def test_for_training(self, mock_open()):
-	# 	f = open('test.csv', 'wb')
-	# 	writer = csv.writer(f, delimiter=',')
-	# 	for i in range(model.n):
-	# 		row = np.concatenate([x[i], y[i]])
-	# 		writer.writerow(row)
-	# 	f.close()
-	# 	self.assertEqual(os.path.exists.received_args[0], 'test.csv')
- #        mock_open().assert_called_once_with('test.csv', 'w+')
-	# 	# model.train_model('model.csv')
+	def test_for_training(self):
+		f = open('test.csv', 'wb')
+		writer = csv.writer(f, delimiter=',')
+		for i in range(model.n):
+			row = np.concatenate([x[i], y[i]])
+			writer.writerow(row)
+		f.close()
+		assert os.path.exists('test.csv')
+		train_model('model.csv', 'test.csv')
+		assert os.path.exists('model.csv')
+		os.remove('test.csv')
+		os.remove('model.csv')
 
 
 if __name__ == '__main__':

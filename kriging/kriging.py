@@ -282,7 +282,6 @@ def train_model(model_name, training_data_file):
 	start = time()
 	x, y = read_data(training_data_file)
 	x1, y1, x2, y2 = divide_data(x, y)
-	print y[:5]
 	print 'Preliminary model initialising...'
 	prelim_model = Solve(x1, y1)
 	print 'Preliminary model initialised'
