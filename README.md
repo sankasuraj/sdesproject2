@@ -24,7 +24,7 @@ If you wish to see a working build/test script please see our codevoc.yml.
 
 ## Documentation
 
-The latest documentation for PyKriging is available at http://asdjfhj.readthedocs.io/en/latest 
+The latest documentation for PyKriging is available at http://kriging.readthedocs.io/
 
 ## Authors
 
