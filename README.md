@@ -13,6 +13,7 @@ The core dependencies are:
 - numpy
 - matplotlib
 - scipy
+- inspyred
 
 ### Installation
 Please fill this suraj, we need to include makefile setup.py from which installation should happen.
