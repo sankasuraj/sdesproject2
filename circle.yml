@@ -8,5 +8,4 @@ dependencies:
 
 test:
   override:    
-    - python2.7 kriging/test.py
-    - python3.4 kriging/test.py
+    - python kriging/test.py
