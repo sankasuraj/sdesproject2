@@ -12,10 +12,10 @@ The core dependencies are:
 - scipy
 
 ### Installation
-$ git clone https://github.com/sankasuraj/sdesproject2.git
-$ cd sdesproject2
-$ pip install -r requirements.txt
-$ python setup.py install
+- git clone https://github.com/sankasuraj/sdesproject2.git
+- cd sdesproject2
+- pip install -r requirements.txt
+- python setup.py install
 
 ### Credits
 
