@@ -1,11 +1,1 @@
-machine:
-  python:
-    version: 3.4.3
 
-dependencies:
-  post:
-    - pip install -U -r dev-requirements.txt
-
-test:
-  override:    
-    - python kriging/test.py
