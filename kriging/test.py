@@ -2,6 +2,8 @@ from kriging import *
 import mock
 import unittest
 import numpy.testing as npt
+import pytest
+import os
 
 def generate_test_data(num_rows, num_columns):
 	global x 
@@ -21,7 +23,7 @@ def generate_test_data(num_rows, num_columns):
 class TestKriging(unittest.TestCase):
 
 	def setUp(self):
-		generate_test_data(4, 20)
+		generate_test_data(20, 4)
 
 	def tearDown(self):
 		ok = self.currentResult.wasSuccessful()
@@ -32,8 +34,9 @@ class TestKriging(unittest.TestCase):
 		else:
 			'%d errors and %d failures so far' % (len(errors), len(failures))
 
-	def assert_error(self, given, expected, precision):
-		return npt.assert_almost_equal(given, expected, precision)
+	def compare_arrays(self, array1, array2):
+		for i in range(len(array1)):
+			assert array1[i] == pytest.approx(array2[i])
 
 	def run(self, result=None):
 		self.currentResult = result
@@ -49,12 +52,25 @@ class TestKriging(unittest.TestCase):
 			assert 0.0 <= model.y[i] <= 1.0
 
 	def test_for_inverse_normalisation_y(self):
-		self.assert_error(model.inversenormy(model.y), y, 8)			
+		self.compare_arrays(model.inversenormy(model.y), y)
 
 	def test_for_inverse_normalisation_x(self):
 		for i in  range(model.k):
 			given = model.x[:,i] * (model.max_x[i] - model.min_x[i]) + model.min_x[i]
-			self.assert_error(given, x[:,i], 8)
+			self.compare_arrays(given, x[:,i])
+
+	# @mock.patch('builtins.open', mock_open)
+	# def test_for_training(self, mock_open()):
+	# 	f = open('test.csv', 'wb')
+	# 	writer = csv.writer(f, delimiter=',')
+	# 	for i in range(model.n):
+	# 		row = np.concatenate([x[i], y[i]])
+	# 		writer.writerow(row)
+	# 	f.close()
+	# 	self.assertEqual(os.path.exists.received_args[0], 'test.csv')
+ #        mock_open().assert_called_once_with('test.csv', 'w+')
+	# 	# model.train_model('model.csv')
+
 
 if __name__ == '__main__':
 	unittest.main()

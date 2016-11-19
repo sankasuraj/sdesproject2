@@ -306,7 +306,7 @@ def train_model(model_name, training_data_file):
 	print 'Total time taken = ' + str(int(end-start)) + ' seconds'
 	print 'L2 error for the given data = ' + str(round(error, 2))
 
-	f = open(model_name+'.csv', 'wb')
+	f = open(model_name, 'wb')
 	writer = csv.writer(f, delimiter = ',')
 	writer.writerow(np.concatenate([final_model.max_x, final_model.max_y]))
 	writer.writerow(np.concatenate([final_model.min_x, final_model.min_y]))
