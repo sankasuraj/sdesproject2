@@ -31,7 +31,7 @@ The latest documentation for PyKriging is available at http://asdjfhj.readthedoc
 * **Vinod Kumar Metla**
 * **Mrinalgouda Patil**
 
-See also the list of [contributors](https://github.com/mpcsdspa/learn/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/sankasuraj/sdesproject2/contributors) who participated in this project.
 
 ## Acknowledgments
 
