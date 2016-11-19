@@ -16,7 +16,7 @@ setup(
     version='1.0',
     zip_safe = False,
     packages=find_packages(),
-    package_data={'kriging'},
+    package_data={'kriging': ['kriging/*']},
     license='',
     author='Suraj Sanka, Mrinal Patil, Vinod Kumar',
     description='A Kriging Toolbox for Python',
