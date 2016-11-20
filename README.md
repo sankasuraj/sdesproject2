@@ -2,14 +2,7 @@
 [![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=shield)](https://circleci.com/gh/sankasuraj/sdesproject2) [![Coverage Status](https://coveralls.io/repos/github/mpcsdspa/learn/badge.svg?branch=master)](https://coveralls.io/github/mpcsdspa/learn?branch=master) [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
 
 Kriging is a tool which produces ‘N’ dimensional approximation for the training data. Given a file containing data with both independent and dependent variables, we intend to model the relation between these variables. By using this model, we can find the output for the new input data.
-
-# Note: 
 The independent variables can be of any of dimension while the dependent variables is restricted to only one dimension.
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Dependencies
 
@@ -19,7 +12,10 @@ The core dependencies are:
 - scipy
 
 ### Installation
-Please fill this suraj, we need to include makefile setup.py from which installation should happen.
+$ git clone https://github.com/sankasuraj/sdesproject2.git
+$ cd sdesproject2
+$ pip install -r requirements.txt
+$ python setup.py install
 
 ### Credits
 
