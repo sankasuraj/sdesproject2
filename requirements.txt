@@ -3,3 +3,5 @@ numpy==1.11.2
 pytest
 inspyred
 scipy
+unittest
+nose
