@@ -15,8 +15,6 @@ The core dependencies are:
 
 ### Installation
 
-.. sourcecode:: bash
-
     $ git clone https://github.com/sankasuraj/sdesproject2.git
     $ cd sdesproject2
     $ pip install -r requirements.txt
