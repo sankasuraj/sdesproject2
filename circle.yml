@@ -3,6 +3,14 @@ dependencies:
     - pip install --upgrade pip
     - pip install -r requirements.txt
     
+
+test:
+  override:
+    - py.test tests/test.py --cov=codecov
+    - python setup.py install
+    - codecov
+    - coveralls
+
 test:
   post:
     - bash <(curl -s https://codecov.io/bash)
