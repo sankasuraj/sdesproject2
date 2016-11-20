@@ -1,13 +1,5 @@
-[run]
-source = sdesproject2
-omit =
-   sdesproject2/kriging/*
-   */site-packages/numpy/*
-   */site-packages/nose/*
-   */site-packages/scipy/*
-   */site-packages/inspyred/*
-   */site-packages/py/*
-   */site-packages/_pytest/*
-   *__init__*
-   
 [report]
+
+omit =
+   */site-packages/*
+   *__init__*
