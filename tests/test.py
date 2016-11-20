@@ -6,9 +6,7 @@ sys.path.insert(0, os.path.abspath(module_path))
 from kriging import *
 import numpy as np
 import unittest
-import numpy.testing as npt
 import pytest
-import numpy as np
 
 
 def generate_data(num_rows, num_columns):
