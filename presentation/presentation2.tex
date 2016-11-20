@@ -1,0 +1,200 @@
+\documentclass{beamer}
+
+%\usetheme{PaloAlto}
+\usetheme{CambridgeUS}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{float}
+
+
+\title[]{Data Approximation using Kriging}
+\subtitle{Group 12}
+
+\author[]{Suraj Sanka \and Mrinalgouda Patil \and Vinod Metla\\
+		130010057 \hspace{0.5cm} \and 130010061 \hspace{0.5cm} \and 130010048}
+
+\date[]{SDES Project 2 \\ 21st November, 2016}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents
+\end{frame}
+
+\section{Problem Statement}
+
+\begin{frame}{Problem Statement}
+\justifying
+To create a tool which produces approximation for any given `N' dimensional training data.\\[0.2in]
+Given a file containing data with both independent and dependent variables, we intend to model the relation between these variables. By using this model, we can find the output for the new input data.\\[0.4in] 
+Note: The independent variables can be of any of dimension while the dependent variables is restricted to only one dimension.
+\end{frame}
+
+
+\section{GitHub page}
+
+\begin{frame}{GitHub page}
+Visit out GitHub page at \url{https://github.com/sankasuraj/sdesproject2}
+\begin{figure}[H]
+	\includegraphics[scale=0.27]{readme.png}
+	\caption{GitHub page}
+\end{figure}
+
+\end{frame}
+
+\section{GitHub}
+\begin{frame}{Commits and branches}
+Total commits made till submission: 94
+\begin{enumerate}
+	\item Mrinal Patil - 52
+	\item Suraj Sanka - 24
+	\item Vinod Kumar - 18
+\end{enumerate}
+\begin{figure}[H]
+	\includegraphics[scale=0.5]{branches.png}
+	\caption{GitHub branches}
+\end{figure}
+\end{frame}
+
+\section{Commits}
+
+\begin{frame}{Git Commits}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{commits1.png}
+	\caption{Git Commits timeline}
+\end{figure}
+\end{frame}
+
+\section{Tests}
+
+\begin{frame}{Tests}
+\begin{enumerate}
+	\item Nose, Pytest, Unittest used
+	\item circle-ci testsuites in verbose mode
+	\item Click on circleci in the github page to run the tests
+	\item Alternatively run \textbf{make test} to test the code
+	\item mock is not used
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Verbose testsuite}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{verbose.png}
+	\caption{On clicking circleci in GitHub page}
+\end{figure}
+\end{frame}
+
+
+\section{Automation}
+
+\begin{frame}{Automation}
+\justifying
+\begin{enumerate}
+	\item make file
+	\begin{enumerate}
+		\item \textbf{make} command will start the program
+		\item \textbf{make test} will run all the tests
+	\end{enumerate}
+	\item setup.py - yes
+	\item circle-ci is used not travis-ci
+\end{enumerate}
+\end{frame}
+
+\section{Documentation}
+\begin{frame}{Documentation}
+Docs available at \url{http://kriging.readthedocs.io/}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{docs.png}
+	\caption{Documentation}
+\end{figure}
+
+\end{frame}
+
+
+\section{Code Cleanliness}
+\begin{frame}{Code Cleanliness}
+\justifying
+PEP8 is followed \\
+Using the program:
+\begin{enumerate}
+	\item Making the model:
+\begin{enumerate}
+	\item Make
+	\item Choose the csv file which has x, y data
+	\item Choose a name for the model to save
+	\item Wait until the model is trained
+\end{enumerate}
+	\item Using the model:
+\begin{enumerate}
+	\item Make
+	\item Choose a previously saved model
+	\item Choose an x data where y is to be found
+	\item Choose a name for the output file
+	\item Wait until the model finds the value for each row in x data
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+\section{Using the program}
+
+\begin{frame}{Using the program}
+\begin{figure}[H]
+	\includegraphics[scale=0.4]{firstblock.png}
+	\caption{First block}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[scale=0.4]{second.png}
+	\caption{Second block}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Using the program}
+\begin{figure}[H]
+	\includegraphics[scale=0.4]{progress}
+	\caption{Progress window}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[scale=0.3]{usemodel.png}
+	\caption{Using the model}
+\end{figure}
+
+\end{frame}
+
+
+\section*{References}
+\begin{frame}{Bibliography}
+  \begin{thebibliography}{10}
+    
+
+  \bibitem{Kriging}
+    Kriging.
+   
+  \url{pykriging.com} \\
+  \url{https://github.com/capaulson/pyKriging}
+  \bibitem{Tkinter}
+    Tkinter
+  \url{https://www.summet.com/dmsi/html/guiProgramming.html}
+  
+  \bibitem{Circle Ci}
+  	Circle Ci.
+  	\url{https://circleci.com/docs/getting-started/}
+  \end{thebibliography}
+
+\end{frame}
+
+\section*{lastslide}
+\begin{frame}
+\begin{center}
+\Huge Thank you
+\end{center}
+\end{frame}
+
+
+\end{document}
