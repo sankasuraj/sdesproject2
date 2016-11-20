@@ -1,5 +1,4 @@
 from kriging import *
-import mock
 import unittest
 import numpy.testing as npt
 import pytest
