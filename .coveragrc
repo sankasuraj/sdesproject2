@@ -1,5 +1,6 @@
 [report]
 
-omit = */site-packages/*
-   */migrations/*
+omit = 
+   */python?.?/*
+   */site-packages/*
    *__init__*
