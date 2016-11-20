@@ -1,9 +1,5 @@
-[run]
+[report]
 
-source = sdesproject2
-
-omit =  
+omit =
     */python?.?/*
-        */python?/*
-    */site-packages/nose/*
     *__init__*
