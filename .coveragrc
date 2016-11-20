@@ -1,6 +1,5 @@
 [report]
 
-omit =
-   */site-packages/*
-   */python2.7.9/*
+omit = */site-packages/*
+   */migrations/*
    *__init__*
