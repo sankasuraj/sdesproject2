@@ -4,4 +4,3 @@ pytest
 inspyred
 scipy
 unittest
-nose
