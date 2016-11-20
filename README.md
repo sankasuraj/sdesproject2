@@ -14,10 +14,13 @@ The core dependencies are:
 - Tkinter
 
 ### Installation
-- git clone https://github.com/sankasuraj/sdesproject2.git
-- cd sdesproject2
-- pip install -r requirements.txt
-- python setup.py install
+
+.. sourcecode:: bash
+
+    $ git clone https://github.com/sankasuraj/sdesproject2.git
+    $ cd sdesproject2
+    $ pip install -r requirements.txt
+    $ python setup.py install
 
 ### Credits
 
