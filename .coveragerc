@@ -1,5 +1,16 @@
-[report]
-
-omit =
+[run]
+omit =  
     */python?.?/*
+    */lib-python/?.?/*.py
+    */lib_pypy/_*.py
+    */site-packages/*
+    */unittest2/*
+    *__init__*   
+[report]
+omit =  
+    */python?.?/*
+    */lib-python/?.?/*.py
+    */lib_pypy/_*.py
+    */site-packages/*
+    */unittest2/*
     *__init__*
