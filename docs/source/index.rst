@@ -13,6 +13,7 @@ Welcome to Kriging's documentation!
    overview
    intro
    installation
+   quickstart
 
 Indices and tables
 ==================
