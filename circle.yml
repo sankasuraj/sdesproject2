@@ -2,3 +2,7 @@ dependencies:
   pre:
     - pip install --upgrade pip
     - pip install -r requirements.txt
+    
+test:
+  post:
+    - bash <(curl -s https://codecov.io/bash)
