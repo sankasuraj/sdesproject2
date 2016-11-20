@@ -1,8 +1,12 @@
+import os
+import sys
+module_path = os.path.dirname(os.path.curdir+os.path.sep)
+sys.path.insert(0, os.path.abspath(module_path))
+
 from kriging import *
 import unittest
 import numpy.testing as npt
 import pytest
-import os
 import numpy as np
 
 
