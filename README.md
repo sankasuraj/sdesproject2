@@ -10,6 +10,8 @@ The core dependencies are:
 - numpy
 - matplotlib
 - scipy
+- inspyred
+- Tkinter
 
 ### Installation
 - git clone https://github.com/sankasuraj/sdesproject2.git
