@@ -1,13 +1,10 @@
 [run]
 omit =  
-    */site-packages/numpy/*
-    */site-packages/nose/*
-    */site-packages/scipy/*
     */site-packages/*
-    */site-packages/inspyred/*
-    */site-packages/py/*
-    */site-packages/_pytest/*
-    *__init__*   
 [report]
 omit = 
     */kriging/*
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/xunit.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/multiprocess.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/base.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/inspyred/ec/analysis.py 
