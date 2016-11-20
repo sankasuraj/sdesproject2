@@ -22,24 +22,23 @@ class simpleapp_tk(Tkinter.Tk):
         #self.entry = Tkinter.Entry(self,textvariable=self.entryVariable)
         #self.entry.grid(row=0,column=0, columnspan=2, pady=5, padx=5)
         #self.entryVariable.set("Enter text here.")
-        Label(self, text="First").grid(row=0, sticky=W)
-        #text2 = Text(self,height=2,width=20)
-        #text2.insert('\nCurve Fitting Tool\n', 'big')
-        #text2.grid(row=0, column=0, sticky='E', padx=5, pady=5)
+        Label(self, text="To Train a model out of a csv file click Train Model").grid(row=0, sticky=W)
         create = Tkinter.Button(self,text="Create Model",command = self.Window2, height = 1, width = 10)
-        create.grid(row=1, column=0, sticky='E', padx=5, pady=5)
-        
+        create.grid(row=1, column=0, sticky='W', padx=5, pady=5)
+        Label(self, text="To get the values using a model click Use Model").grid(row=2, sticky=W)
         use = Tkinter.Button(self,text="Use Model",command = self.OpenFile, height = 1, width = 10)
-        use.grid(row=2, column=0, sticky='E', padx=5, pady=5)
+        use.grid(row=3, column=0, sticky='W', padx=5, pady=5)
         
         quit = Tkinter.Button(self,text="Quit",command = self.destroy)
-        quit.grid(row=2, column=1, sticky='E', padx=5, pady=5)
+        quit.grid(row=4, column=1, sticky='E', padx=5, pady=5)
         self.grid_columnconfigure(0,weight=1)
         #self.resizable(True,False)
 
     #For Opening a file
     def OpenFile(self):
-	    filename = askopenfilename()
+        filename = askopenfilename()
+        if filename:
+            self.window2.labelVariable.set(filename)
     
     #def Quit(self):
 	#result = messagebox.askyesno("Continue?", "Do you want to quit?")
@@ -59,8 +58,14 @@ class simpleapp_tk(Tkinter.Tk):
         back = Button(self.window2, text="Back",command = self.window2.destroy, height = 1, width = 10)
         back.grid(row=1, column=0, sticky='E',pady=5, padx=5)
 
-        next = Button(self.window2,text="Next",command=combine_funcs(self.Window3,self.window2.destroy), height = 1, width = 10)
+        next = Button(self.window2,text="Next",command=combine_funcs(self.Window3,self.window2.destroy), 
+                                height = 1, width = 10)
         next.grid(row=1, column=1, sticky='E',pady=5, padx=5)
+        self.window2.labelVariable = Tkinter.StringVar()
+        label2 = Label(self.window2,textvariable=self.window2.labelVariable,
+                              anchor="w",fg="white",bg="blue")
+        label2.grid(row=2,column=0,columnspan=2,sticky='EW')
+        self.window2.labelVariable.set("Hello !")
 
     def Window3(self):
         self.window3 = Toplevel()
