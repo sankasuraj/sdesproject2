@@ -10,7 +10,3 @@ test:
     - python setup.py install
     - codecov
     - coveralls
-
-test:
-  post:
-    - bash <(curl -s https://codecov.io/bash)
