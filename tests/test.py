@@ -5,7 +5,7 @@ import pytest
 import os
 
 
-def generate_test_data(num_rows, num_columns):
+def generate_data(num_rows, num_columns):
     global x_test
     global y_test
     x_test = []
@@ -22,7 +22,7 @@ def generate_test_data(num_rows, num_columns):
 class TestKriging(unittest.TestCase):
 
     def setUp(self):
-        generate_test_data(20, 4)
+        generate_data(20, 4)
 
     def compare_arrays(self, array1, array2):
         for i in range(len(array1)):
@@ -31,7 +31,7 @@ class TestKriging(unittest.TestCase):
     def test_for_normalisation_x(self):
         for i in range(model_test.n):
             for j in range(model_test.k):
-                assert 0.0 <= model.x_test[i][j] <= 1.0
+                assert 0.0 <= model_test.x_test[i][j] <= 1.0
 
     def test_for_normalisation_y(self):
         for i in range(model_test.n):
