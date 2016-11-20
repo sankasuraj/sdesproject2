@@ -1,2 +1,8 @@
 codecov:
   token: d7458d9d-f897-42aa-bccb-392902b1d2a7
+  branch: stable
+  
+coverage:
+  round: up
+  range: 0..10
+  precision: 5

@@ -1,5 +1,5 @@
 # Kriging 
-[![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=shield)](https://circleci.com/gh/sankasuraj/sdesproject2) [![Coverage Status](https://coveralls.io/repos/github/mpcsdspa/learn/badge.svg?branch=master)](https://coveralls.io/github/mpcsdspa/learn?branch=master) [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
+[![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=shield)](https://circleci.com/gh/sankasuraj/sdesproject2) [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
 
 Kriging is a tool which produces ‘N’ dimensional approximation for the training data. Given a file containing data with both independent and dependent variables, we intend to model the relation between these variables. By using this model, we can find the output for the new input data.
 The independent variables can be of any of dimension while the dependent variables is restricted to only one dimension.
@@ -30,7 +30,7 @@ See also the list of [contributors](https://github.com/sankasuraj/sdesproject2/c
 
 ## Documentation
 
-The latest documentation for PyKriging is available at http://kriging.readthedocs.io/
+The latest documentation for kriging is available at http://kriging.readthedocs.io/
 
 
 ## Acknowledgments
