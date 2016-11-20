@@ -1,5 +1,5 @@
-[report]
-
+[run]
+source = sdesproject2
 omit =  
     */python?.?/*
 	*/python?/*
@@ -7,4 +7,6 @@ omit =
     */site-packages/scipy/*
     */site-packages/inspyred/*
     */site-packages/numpy/*
+    */site-packages/py/*
+    */site-packages/_pytest/*
     *__init__*
