@@ -4,4 +4,7 @@ omit =
     */python?.?/*
 	*/python?/*
     */site-packages/nose/*
+    */site-packages/scipy/*
+    */site-packages/inspyred/*
+    */site-packages/numpy/*
     *__init__*
