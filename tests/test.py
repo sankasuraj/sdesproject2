@@ -24,22 +24,9 @@ class TestKriging(unittest.TestCase):
     def setUp(self):
         generate_test_data(20, 4)
 
-    def tearDown(self):
-        ok = self.currentResult.wasSuccessful()
-        errors = self.currentResult.errors
-        failures = self.currentResult.failures
-        if ok:
-            print ' All tests passed so far!'
-        else:
-            '%d errors and %d failures so far' % (len(errors), len(failures))
-
     def compare_arrays(self, array1, array2):
         for i in range(len(array1)):
             assert array1[i] == pytest.approx(array2[i])
-
-    def run(self, result=None):
-        self.currentResult = result
-        unittest.TestCase.run(self, result)
 
     def test_for_normalisation_x(self):
         for i in range(model_test.n):
