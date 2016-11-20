@@ -1,4 +1,5 @@
 import Tkinter
+import tkFont
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from kriging import *
@@ -18,16 +19,21 @@ class simpleapp_tk(Tkinter.Tk):
         self.initialize()
     
     def initialize(self):
-        self.grid()        
-        Label(self, text="To Train a model out of a csv file click Train Model").grid(row=0, sticky=W)
-        create = Tkinter.Button(self,text="Create Model",command = self.Window2, height = 1, width = 10)
-        create.grid(row=1, column=0, sticky='W', padx=5, pady=5)
-        Label(self, text="To get the values using a model click Use Model").grid(row=2, sticky=W)
-        use = Tkinter.Button(self,text="Use Model",command = self.OpenFile, height = 1, width = 10)
-        use.grid(row=3, column=0, sticky='W', padx=5, pady=5)
+        self.grid()
+        self.customFont1 = tkFont.Font(family="Helvetica", size=15)
+        label0=Label(self,text="Curve Fitting Tool",font=self.customFont1)
+        label0.grid(row=0,sticky=W)
+        label1=Label(self, text="To Train a model out of a csv file click Train Model",font=tkFont.Font(family="Helvetica",size=10))
+        label1.grid(row=1, sticky=W)
+        create = Tkinter.Button(self,text="Train Model",command = self.Window2, height = 1, width = 10)
+        create.grid(row=2, column=0, sticky='W', padx=5, pady=5)
+        label2=Label(self, text="To get the values using a model click Use Model",font=tkFont.Font(family="Helvetica",size=10))
+        label2.grid(row=3, sticky=W)
+        use = Tkinter.Button(self,text="Use Model",command = self.Window4, height = 1, width = 10)
+        use.grid(row=4, column=0, sticky='W', padx=5, pady=5)
         
         quit = Tkinter.Button(self,text="Quit",command = self.destroy)
-        quit.grid(row=4, column=1, sticky='E', padx=5, pady=5)
+        quit.grid(row=5, column=1, sticky='E', padx=5, pady=5)
         self.grid_columnconfigure(0,weight=1)
         #self.resizable(True,False)
 
@@ -35,6 +41,32 @@ class simpleapp_tk(Tkinter.Tk):
     def OpenFile(self):
         self.filename = askopenfilename()
         if self.filename:
+            self.window2.labelVariable.set("Now save the model using Save button")
+            #window2.save_model.config(state="normal")
+
+    def OpenFile1(self):
+        self.filename = askopenfilename()
+        if self.filename:
+            self.window4.labelVariable.set("Now load the X data for which Y-values should be determined")
+
+    def OpenFile2(self):
+        self.filename = askopenfilename()
+        if self.filename:
+            self.window4.labelVariable.set("Now save the data using the Output button")
+
+    def file_save(self):
+        self.savefile = asksaveasfile(mode='w', defaultextension=".csv")
+        if self.savefile is None: # asksaveasfile return `None` if dialog closed with "cancel".
+            return
+        if self.savefile:
+            self.window2.labelVariable.set("Now press Next to start Training the data")
+
+    def file_save1(self):
+        self.savefile = asksaveasfile(mode='w', defaultextension=".csv")
+        if self.savefile is None: # asksaveasfile return `None` if dialog closed with "cancel".
+            return
+        if self.savefile:
+            self.window4.labelVariable.set("Now press Next to start the model")
             self.window2.labelVariable.set(self.filename)
 
     #def Quit(self):
@@ -123,13 +155,69 @@ class simpleapp_tk(Tkinter.Tk):
     def Window4(self):
         self.window4 = Toplevel()
         self.window4.title("Model")
+        self.window4.labelVariable = Tkinter.StringVar()
+        label4 = Label(self.window4,textvariable=self.window4.labelVariable,
+                              anchor="w",fg="white",bg="blue")
+        label4.grid(row=0,column=0,columnspan=2,sticky='EW')
+        self.window4.labelVariable.set("Import the Loaded model Using 'Load Model' button")
+        self.loadmodel = Button(self.window4,text="Load Model",command = self.OpenFile1)
+        self.loadmodel.grid(row=1,column=0,rowspan=2, pady=5, padx=5)
+        self.xdata = Button(self.window4,text="X Data",command = self.OpenFile2)
+        self.xdata.grid(row=1, column=1, rowspan=2,pady=5, padx=5)
+        self.output = Button(self.window4,text="Output",command = self.file_save1)
+        self.output.grid(row=1, column=2, sticky='E',pady=5, padx=5)
+        next = Button(self.window4,text="Next",command = find_values(self.loadmodel,self.xdata,self.output))
+        next.grid(row=1, column=2, sticky='E',pady=5, padx=5)
+
+    def find_values(model_name, find_y, outname):
+        model_file = open(model_name, 'rb')
+        model_data = csv.reader(model_file, delimiter=',')
+        n = 0
+        normalised_x = []
+        for row in model_data:
+            if n == 0:
+                x_max = str_to_float(row[:-1])
+                y_max = float(row[-1])
+            elif n == 1:
+                x_min = str_to_float(row[:-1])
+                y_min = float(row[-1])
+            else:
+                normalised_x.append(str_to_float(row))
+            n += 1
+        normalised_x = np.array(normalised_x)
+        model_file.close()
+        print 'Model loaded'
+        model = Solve(normalised_x, normalised_x[:,0])
+        model.max_x = np.array(x_max)
+        model.min_x = np.array(x_min)
+        model.max_y = y_max
+        model.min_y = y_min
+        model.updateData()
+        print 'Estimation started'
+        estimation_file = open(find_y, 'rb')
+        x_data = csv.reader(estimation_file, delimiter=',')
+        x = []
+        for row in x_data:
+            x.append(str_to_float(row))
+        estimation_file.close()
+        estimate_y = []
+        for row in x:
+            estimate_y.append(model.predict(row))
+        print 'Estimation done'
+        outfile = open(outname, 'wb')
+        writer = csv.writer(outfile, delimiter=',')
+        for row in estimate_y:
+            writer.writerow([row])
+        outfile.close()
+        print 'Outfile written'
         save = Button(self.window4,text="Next",command = combine_funcs(self.window4.destroy,self.Window3))
         save.grid(row=0,column=1,sticky='E', pady=5, padx=5)
         back = Button(self.window4,text="Back",command = combine_funcs(self.window4.destroy,self.Window3))
         back.grid(row=0, column=0, sticky='E',pady=5, padx=5)
-    def Usemodel(self):
-        self.window5 = Toplevel()
-        self.window5.title("New Model")
+    #def Usemodel(self):
+        #self.window5 = Toplevel()
+        #self.window5.title("New Model")
+
 
 if __name__ == '__main__':
     app = simpleapp_tk(None)
