@@ -4,6 +4,7 @@ omit =
 [report]
 omit = 
     */kriging/*
+    *__init__.py*
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/xunit.py
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/multiprocess.py
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/base.py
@@ -202,4 +203,62 @@ omit =
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/py/_path/common.py
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/doctest.py
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/tmpdir.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/decomp_schur.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/sparse/linalg/dsolve/linsolve.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/optimize/_trustregion_ncg.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/_solvers.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/helpconfig.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/arrayterator.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/sparse/linalg/matfuncs.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/optimize/zeros.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/nose/plugins/skip.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/monkeypatch.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/fft/fftpack.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/fixtures.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/stride_tricks.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/linalg/linalg.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/sparse/csgraph/_validation.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/py/_io/capture.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/testing/nosetester.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/matfuncs.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/unittest.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/cacheprovider.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/hookspec.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/add_newdocs.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/sparse/linalg/dsolve/_add_newdocs.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/core/info.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/fft/info.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/info.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/linalg_version.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/linalg/info.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/random/info.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/_globals.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/inspyred/swarm/topologies.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/version.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/_lib/_util.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/main.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/runner.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/flinalg.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/ctypeslib.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/sparse/base.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/inspyred/ec/generators.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/decomp_svd.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/optimize/_root.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/py/_builtin.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/ma/core.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/inspyred/benchmarks.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/core/fromnumeric.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/setuponly.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/py/_code/code.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/optimize/nonlin.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/_code/code.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/recwarn.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/freeze_support.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/misc.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/_datasource.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/linalg/decomp_lu.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/_version.py      
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/integrate/_ode.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/python.py
+
 
