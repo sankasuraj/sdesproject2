@@ -1,5 +1,6 @@
 # Kriging 
-[![Build Status](https://travis-ci.org/sankasuraj/sdesproject2.svg?branch=master)](https://travis-ci.org/sankasuraj/sdesproject2) [![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=shield)](https://circleci.com/gh/sankasuraj/sdesproject2) 
+[![Build Status](https://travis-ci.org/sankasuraj/sdesproject2.svg?branch=master)](https://travis-ci.org/sankasuraj/sdesproject2) 
+[![CircleCI](https://circleci.com/gh/sankasuraj/sdesproject2.svg?style=shield)](https://circleci.com/gh/sankasuraj/sdesproject2) 
 [![Coverage Status](https://coveralls.io/repos/github/sankasuraj/sdesproject2/badge.svg?branch=master)](https://coveralls.io/github/sankasuraj/sdesproject2?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/kriging/badge/?version=latest)](http://kriging.readthedocs.io/en/latest/?badge=latest)
 [![Requirements Status](https://requires.io/github/sankasuraj/sdesproject2/requirements.svg?branch=master)](https://requires.io/github/sankasuraj/sdesproject2/requirements/?branch=master)
