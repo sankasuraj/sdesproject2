@@ -5,7 +5,6 @@ Installation
 ************
 
 For installation, please follow the instructions provided below:
-Then run the following commands:
 
 .. code:: shell
 
