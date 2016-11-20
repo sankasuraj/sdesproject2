@@ -260,5 +260,7 @@ omit =
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/lib/_version.py      
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/scipy/integrate/_ode.py
      /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/_pytest/python.py
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/core/machar.py 
+     /home/travis/virtualenv/python2.7.9/lib/python2.7/site-packages/numpy/version.py 
 
 
