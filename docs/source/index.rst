@@ -10,7 +10,9 @@ Welcome to Kriging's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   overview
    intro
+   installation
 
 Indices and tables
 ==================
