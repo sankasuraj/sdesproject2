@@ -31,11 +31,11 @@ class TestKriging(unittest.TestCase):
     def test_for_normalisation_x(self):
         for i in range(model_test.n):
             for j in range(model_test.k):
-                assert 0.0 <= model_test.x_test[i][j] <= 1.0
+                assert 0.0 <= model_test.x[i][j] <= 1.0
 
     def test_for_normalisation_y(self):
         for i in range(model_test.n):
-            assert 0.0 <= model_test.y_test[i] <= 1.0
+            assert 0.0 <= model_test.y[i] <= 1.0
 
     def test_for_inverse_normalisation_y(self):
         self.compare_arrays(model_test.inversenormy(model_test.y), y_test)
