@@ -1,10 +1,11 @@
-[run]
-source = sdesproject2
+[report]
+
 omit =  
-    */python2.7.9/lib/python2.7/site-packages/_pytest/*
-    */python2.7.9/lib/python2.7/site-packages/py/*
-    */python2.7.9/lib/python2.7/site-packages/numpy/*
-    */python2.7.9/lib/python2.7/site-packages/scipy/*
-    */python2.7.9/lib/python2.7/site-packages/inspyred/*
-    */python2.7.9/lib/python2.7/site-packages/nose/*
+    */python?.?/*
+    */site-packages/_pytest/*
+    */site-packages/py/*
+    */site-packages/numpy/*
+    */site-packages/scipy/*
+    */site-packages/inspyred/*
+    */site-packages/nose/*
     *__init__*
