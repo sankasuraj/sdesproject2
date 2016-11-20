@@ -1,4 +1,4 @@
-run
+[run]
 source = sdesproject2
 omit =
    sdesproject2/kriging/*
@@ -9,3 +9,5 @@ omit =
    */site-packages/py/*
    */site-packages/_pytest/*
    *__init__*
+   
+[report]
