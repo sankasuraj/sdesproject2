@@ -6,5 +6,3 @@ dependencies:
 test:
   post:
     - bash <(curl -s https://codecov.io/bash)
-    
-COVERALLS_REPO_TOKEN=wPEpW9rwAWANrtcnNUKN0cSmzHSmfWtKg
