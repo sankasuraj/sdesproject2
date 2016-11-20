@@ -1,4 +1,6 @@
-[report]
+[run]
+
+source = sdesproject2
 
 omit =  
     */python?.?/*
