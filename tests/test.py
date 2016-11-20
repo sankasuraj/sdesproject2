@@ -5,17 +5,17 @@ import pytest
 import os
 
 def generate_test_data(num_rows, num_columns):
-	global x 
-	global y
-	x = []
-	y = []
+	global x_test 
+	global y_test
+	x_test = []
+	y_test = []
 	for i in range(num_rows):
-		x.append(np.random.normal(0.0, 100.0, num_columns))
-		y.append([np.random.uniform(0.0, 100.0)])
-	x = np.array(x)
-	y = np.array(y)
+		x_test.append(np.random.normal(0.0, 100.0, num_columns))
+		y_test.append([np.random.uniform(0.0, 100.0)])
+	x_test = np.array(x_test)
+	y_test = np.array(y_test)
 	global model 
-	model = Solve(x, y)
+	model = Solve(x_test, y_test)
 
 
 

@@ -39,7 +39,7 @@ class simpleapp_tk(Tkinter.Tk):
         filename = askopenfilename()
         if filename:
             self.window2.labelVariable.set(filename)
-    
+
     #def Quit(self):
 	#result = messagebox.askyesno("Continue?", "Do you want to quit?")
     def Window2(self):
@@ -58,7 +58,7 @@ class simpleapp_tk(Tkinter.Tk):
         back = Button(self.window2, text="Back",command = self.window2.destroy, height = 1, width = 10)
         back.grid(row=1, column=0, sticky='E',pady=5, padx=5)
 
-        next = Button(self.window2,text="Next",command=combine_funcs(self.Window3,self.window2.destroy), 
+        next = Button(self.window2,text="Next",command=combine_funcs(self.Window3,self.window2.destroy,self.Progress), 
                                 height = 1, width = 10)
         next.grid(row=1, column=1, sticky='E',pady=5, padx=5)
         self.window2.labelVariable = Tkinter.StringVar()
@@ -66,6 +66,10 @@ class simpleapp_tk(Tkinter.Tk):
                               anchor="w",fg="white",bg="blue")
         label2.grid(row=2,column=0,columnspan=2,sticky='EW')
         self.window2.labelVariable.set("Hello !")
+
+    def Progress(self):
+        for i in range(10):
+            self.window3.labelVariable.set(i)
 
     def Window3(self):
         self.window3 = Toplevel()
@@ -75,6 +79,11 @@ class simpleapp_tk(Tkinter.Tk):
         next.grid(row=0, column=1, sticky='E',pady=5, padx=5)
         back = Button(self.window3,text="Back",command = combine_funcs(self.window3.destroy,self.Window2))
         back.grid(row=0, column=0, sticky='E',pady=5, padx=5)
+        self.window3.labelVariable = Tkinter.StringVar()
+        label3 = Label(self.window3,textvariable=self.window3.labelVariable,
+                              anchor="w",fg="white",bg="blue")
+        label3.grid(row=2,column=0,columnspan=2,sticky='EW')
+        self.window3.labelVariable.set("Hello !")
         #self.topButton.pack()
 
     def Window4(self):
@@ -88,8 +97,7 @@ class simpleapp_tk(Tkinter.Tk):
         self.window5 = Toplevel()
         self.window5.title("New Model")
 
-if __name__ == "__main__":
-    app = simpleapp_tk(None)
-    app.title('Curve Fitting Tool')
-    #app.geometry("200x200")
-    app.mainloop()
+    # app = simpleapp_tk(None)
+    # app.title('Curve Fitting Tool')
+    # app.geometry("200x200")
+    # app.mainloop()
