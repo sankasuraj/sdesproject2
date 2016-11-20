@@ -3,6 +3,7 @@ import unittest
 import numpy.testing as npt
 import pytest
 import os
+import numpy as np
 
 
 def generate_data(num_rows, num_columns):
