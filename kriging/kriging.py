@@ -83,7 +83,8 @@ class Solve:
 
     def generate_population(self, random, args):
         '''
-        Generates an initial population for any global optimization that occurs in pyKriging
+        Generates an initial population for any global optimization that occurs
+        in pyKriging
         :param random: A random seed
         :param args: Args from the optimizer, like population size
         :return chromosome: The new generation for our global optimizer to use
@@ -95,8 +96,10 @@ class Solve:
             chromosome.append(random.uniform(lo, hi))
         return chromosome
 
-    def no_improvement_termination(self, population, num_generations, num_evaluations, args):
-        """Return True if the best fitness does not change for a number of generations of if the max number
+    def no_improvement_termination(self, population, num_generations,
+                                   num_evaluations, args):
+        """Return True if the best fitness does not change for a number of
+        generations of if the max number
         of evaluations is exceeded.
 
         .. Arguments:
@@ -107,7 +110,8 @@ class Solve:
 
         Optional keyword arguments in args:
 
-        - *max_generations* -- the number of generations allowed for no change in fitness (default 10)
+        - *max_generations* -- the number of generations allowed for no change
+        in fitness (default 10)
 
         """
         max_generations = args.setdefault('max_generations', 10)
@@ -143,10 +147,13 @@ class Solve:
 
     def fittingObjective(self, candidates, args):
         '''
-        The objective for a series of candidates from the hyperparameter global search.
-        :param candidates: An array of candidate design vectors from the global optimizer
+        The objective for a series of candidates from the hyperparameter global
+        search.
+        :param candidates: An array of candidate design vectors from the global
+        optimizer
         :param args: args from the optimizer
-        :return fitness: An array of evaluated NegLNLike values for the candidate population
+        :return fitness: An array of evaluated NegLNLike values for the
+        candidate population
         '''
         fitness = []
         for entry in candidates:
@@ -162,9 +169,11 @@ class Solve:
 
     def fittingObjective_local(self, entry):
         '''
-        :param entry: The same objective function as the global optimizer,but formatted for the 
+        :param entry: The same objective function as the global optimizer,but
+        formatted for the
          local optimizer
-        :return: The fitness of the surface at the hyperparameters specified in entry
+        :return: The fitness of the surface at the hyperparameters specified in
+        entry
         '''
         f = 10000
         for i in range(self.k):
@@ -178,7 +187,8 @@ class Solve:
     def train(self):
         '''
         The function trains the hyperparameters of the Kriging model.
-        :param optimizer: Two optimizers are implemented, a Particle Swarm Optimizer or a GA
+        :param optimizer: Two optimizers are implemented, a Particle Swarm
+        Optimizer or a GA
         '''
 
         self.updateData()
@@ -193,9 +203,11 @@ class Solve:
         ea = inspyred.swarm.PSO(Random())
         ea.terminator = self.no_improvement_termination
         ea.topology = inspyred.swarm.topologies.ring_topology
-        final_pop = ea.evolve(generator=self.generate_population, evaluator=self.fittingObjective,
-                              pop_size=300, maximize=False, bounder=ec.Bounder(lowerBound, upperBound),
-                              max_evaluations=30000, neighborhood_size=20, num_inputs=self.k)
+        final_pop = ea.evolve(
+            generator=self.generate_population,
+            evaluator=self.fittingObjective, pop_size=300, maximize=False,
+            bounder=ec.Bounder(lowerBound, upperBound), max_evaluations=30000,
+            neighborhood_size=20, num_inputs=self.k)
         final_pop.sort(reverse=True)
 
         for entry in final_pop:
@@ -208,8 +220,10 @@ class Solve:
             for i in range(self.k):
                 locOP_bounds.append([self.pmin, self.pmax])
 
-            lopResults = minimize(self.fittingObjective_local, newValues,
-                                  method='SLSQP', bounds=locOP_bounds, options={'disp': False})
+            lopResults = minimize(
+                self.fittingObjective_local, newValues, method='SLSQP',
+                bounds=locOP_bounds, options={'disp': False}
+                )
 
             newValues = lopResults['x']
 
@@ -221,7 +235,8 @@ class Solve:
     def predict_normalized(self, x):
         for i in range(self.n):
             self.psi[i] = np.exp(-np.sum(self.theta *
-                                         np.power((np.abs(self.x[i] - x)), self.pl)))
+                                         np.power((np.abs(self.x[i] - x)),
+                                                  self.pl)))
         z = self.y - self.mu
         a = np.linalg.solve(self.U.T, z)
         b = np.linalg.solve(self.U, a)
@@ -301,7 +316,8 @@ def train_model(model_name, training_data_file):
     final_model = Solve(x, y)
     print 'Final model initialised'
     print 'Final model training started'
-    print 'Esimated time remaining is approximately ' + str(int(1.45 * (time() - start))) + ' seconds'
+    print 'Esimated time remaining is approximately ' +
+    str(int(1.45 * (time() - start))) + ' seconds'
     final_model.train()
     print 'Final model trained'
 
