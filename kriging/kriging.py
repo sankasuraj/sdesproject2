@@ -316,8 +316,7 @@ def train_model(model_name, training_data_file):
     final_model = Solve(x, y)
     print 'Final model initialised'
     print 'Final model training started'
-    print 'Esimated time remaining is approximately ' +
-    str(int(1.45 * (time() - start))) + ' seconds'
+    print 'Esimated time remaining is approximately ' + str(int(1.45 * (time() - start))) + ' seconds'
     final_model.train()
     print 'Final model trained'
 
