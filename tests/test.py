@@ -1,8 +1,7 @@
 import os
 import sys
-module_path = os.path.dirname(os.path.curdir+os.path.sep)
+module_path = os.path.dirname(os.path.curdir + os.path.sep)
 sys.path.insert(0, os.path.abspath(module_path))
-
 from kriging import *
 import numpy as np
 import unittest
@@ -47,8 +46,10 @@ class TestKriging(unittest.TestCase):
     def test_for_inverse_normalisation_x(self):
         for i in range(model_test.k):
             given = (
-                model_test.x[:, i] * (model_test.max_x[i] -
-                                      model_test.min_x[i]) + model_test.min_x[i])
+                model_test.x[:, i] * (
+                 model_test.max_x[i] - model_test.min_x[i]) +
+                model_test.min_x[i]
+                )
             self.compare_arrays(given, x_test[:, i])
 
     def test_for_training(self):
@@ -70,7 +71,7 @@ class TestKriging(unittest.TestCase):
         for i in range(model_test.n):
             row = np.concatenate([x_test[i], y_test[i]])
             writer.writerow(row)
-        f.close()       
+        f.close()
         train_model('model.csv', 'test.csv')
         f = open('find_y.csv', 'wb')
         writer = csv.writer(f, delimiter=',')
