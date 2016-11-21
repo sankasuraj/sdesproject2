@@ -17,6 +17,7 @@ class simpleapp_tk(Tkinter.Tk):
         Tkinter.Tk.__init__(self,parent)
         self.parent=parent
         self.filename = None
+        self.savemodel = None
         self.loadmodel=None
         self.xdata = None
         self.output = None
@@ -49,40 +50,34 @@ class simpleapp_tk(Tkinter.Tk):
             #window2.save_model.config(state="normal")
 
     def OpenFile1(self):
-        self.filename = askopenfilename()
-        if self.filename:
+        self.loadmodel = askopenfilename()
+        if self.loadmodel:
             self.window4.labelVariable.set("Now load the X data for which Y-values should be determined")
 
     def OpenFile2(self):
-        self.filename = askopenfilename()
-        if self.filename:
+        self.xdata = askopenfilename()
+        if self.xdata:
             self.window4.labelVariable.set("Now save the name of the data using the Output button")
 
     def file_save(self):
-        self.savefile = asksaveasfile(mode='w', defaultextension=".csv")
-        if self.savefile is None: # asksaveasfile return `None` if dialog closed with "cancel".
+        self.savemodel = asksaveasfile(mode='w', defaultextension=".csv")
+        if self.savemodel is None: # asksaveasfile return `None` if dialog closed with "cancel".
             return
-        if self.savefile:
+        if self.savemodel:
             self.window2.labelVariable.set("Now press Next to start Training the data")
 
     def file_save1(self):
-        self.savefile = asksaveasfile(mode='w', defaultextension=".csv")
-        if self.savefile is None: # asksaveasfile return `None` if dialog closed with "cancel".
+        self.output = asksaveasfile(mode='w', defaultextension=".csv")
+        if self.output is None: # asksaveasfile return `None` if dialog closed with "cancel".
             return
-        if self.savefile:
+        if self.output:
             self.window4.labelVariable.set("Now press Estimate to estimate the Y-values for given X-data")
 
-    #def Quit(self):
-	#result = messagebox.askyesno("Continue?", "Do you want to quit?")
     def Window2(self):
         self.window2 = Toplevel()
         self.window2.title("Window 2")
         self.window2.transient(self)
 
-        # self.entryVariable = Tkinter.StringVar()
-        # self.entry = Tkinter.Entry(self.window2,textvariable=self.entryVariable)
-        # self.entry.grid(row=0,column=0, sticky='NSEW',columnspan=3, pady=5, padx=5)
-        # self.entryVariable.set("Please choose a file using import button")
         self.window2.labelVariable = Tkinter.StringVar()
         label3 = Label(self.window2,textvariable=self.window2.labelVariable,
                               anchor="w",fg="white",bg="blue")
@@ -116,7 +111,6 @@ class simpleapp_tk(Tkinter.Tk):
                               anchor="w",fg="white",bg="blue")
         label5.grid(row=1,sticky='EW')
         self.window3.labelVariable.set("Hello !")
-        self.Progress()
 
         back = Button(self.window3,text="Back",command = combine_funcs(self.window3.destroy,self.Window2))
         back.grid(row=2, column=1, sticky='E',pady=5, padx=5)
@@ -124,10 +118,12 @@ class simpleapp_tk(Tkinter.Tk):
         next = Button(self.window3,text="Next",command=combine_funcs(self.Window4,self.window3.destroy))
         next.grid(row=2, column=2, sticky='E',pady=5, padx=5)
 
+        self.Progress()
+
         #self.topButton.pack()
 
     def Progress(self):
-        model_name = '../../model.csv'
+        model_name = self.savemodel
         training_data_file = self.filename
         start = time()
         x, y = read_data(training_data_file)
@@ -165,14 +161,12 @@ class simpleapp_tk(Tkinter.Tk):
         self.window3.labelVariable.set(show)
         show += 'L2 error for the given data = ' + str(round(error, 2)) + '\n'
         self.window3.labelVariable.set(show)
-
-        f = open(model_name, 'wb')
-        writer = csv.writer(f, delimiter = ',')
+        writer = csv.writer(model_name, delimiter = ',')
         writer.writerow(np.concatenate([final_model.max_x, final_model.max_y]))
         writer.writerow(np.concatenate([final_model.min_x, final_model.min_y]))
         for i in range(final_model.n):
             writer.writerow(x[i])
-        f.close()
+        model_name.close()
 
 
 
@@ -241,11 +235,10 @@ class simpleapp_tk(Tkinter.Tk):
         for row in x:
             estimate_y.append(model.predict(row))
         print 'Estimation done'
-        outfile = open(outname, 'wb')
-        writer = csv.writer(outfile, delimiter=',')
+        writer = csv.writer(outname, delimiter=',')
         for row in estimate_y:
             writer.writerow([row])
-        outfile.close()
+        outname.close()
         print 'Outfile written'
         save = Button(self.window4,text="Next",command = combine_funcs(self.window4.destroy,self.Window3))
         save.grid(row=0,column=1,sticky='E', pady=5, padx=5)
